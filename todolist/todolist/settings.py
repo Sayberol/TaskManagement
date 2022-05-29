@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
     'todolist',
 ]
 
@@ -81,8 +83,8 @@ DATABASES = {
             'NAME': 'todolist',
             'USER': 'todolist',
             'PASSWORD': 'todolist',
-            'HOST': 'localhost',
-            'PORT': '5432',
+            'HOST': '127.0.0.1',
+            'PORT': '5433',
     }
 }
 
@@ -127,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'core.User'
