@@ -18,8 +18,7 @@ services:
 #    volumes:
 #      - ./.docker_env:/app/.env
   migrations:
-    build:
-      context: .
+    image: sayberol/todolist
     depends_on:
       postgres:
         condition: service_healthy
