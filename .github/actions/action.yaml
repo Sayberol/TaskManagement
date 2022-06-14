@@ -27,7 +27,7 @@ jobs:
       - name: render configs
         run: |
           mkdir deploy
-          cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
+          cat docker-compose-server.yaml | envsubst > deploy/docker-compose.yaml
           cat docker_ci_config.py | envsubst > deploy/docker_config.py
       - name: clone files to server
         uses: appleboy/scp-action@master
@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           source: "deploy/docker-compose.yaml,deploy/docker_config.py"
-          target: "flask-app"
+          target: "todolist"
           strip_components: 1
       - name: run docker-compose
         uses: appleboy/ssh-action@master
@@ -45,5 +45,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd flask-app
+            cd todolist
             echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose up -d
