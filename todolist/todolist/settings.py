@@ -83,7 +83,7 @@ DATABASES = {
             'NAME': 'todolist',
             'USER': 'postgres',
             'PASSWORD': 'todolist',
-            'HOST': 'postgres',
+            'HOST': '192.168.0.120',
             'PORT': '5432',
     }
 }
