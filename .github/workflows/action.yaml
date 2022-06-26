@@ -5,7 +5,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: clone code
-        uses: workflows/checkout@v2
+        uses: actions/checkout@v2
       - name: docker build
         run: docker build -t sayberol/todolist .
       - name: docker login
@@ -21,7 +21,7 @@ jobs:
       DB_NAME: ${{ secrets.DB_NAME }}
     steps:
       - name: clone code
-        uses: workflows/checkout@v2
+        uses: actions/checkout@v2
       - name: render configs
         run: |
           mkdir deploy
