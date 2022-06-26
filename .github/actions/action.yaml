@@ -4,7 +4,7 @@ description:
 runs:
 jobs:
   build_and_push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: clone code
         uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
       - name: docker push
         run: docker push sayberol/todolist
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build_and_push
     env:
       DB_USER: postgres
