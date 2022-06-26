@@ -5,7 +5,7 @@ services:
       dockerfile: ./docker/Dockerfile
       context: ./front
     ports:
-      - 8034:80
+      - 80:80
     depends_on:
       - api
   api:
