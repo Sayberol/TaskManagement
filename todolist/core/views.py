@@ -17,7 +17,6 @@ class SignupView(CreateAPIView):
 
 
 class LoginView(GenericAPIView):
-    print("otrabotal")
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
