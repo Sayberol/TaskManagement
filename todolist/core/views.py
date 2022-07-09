@@ -4,8 +4,10 @@ from rest_framework import permissions
 from rest_framework.generics import CreateAPIView, GenericAPIView, RetrieveUpdateDestroyAPIView, UpdateAPIView
 from rest_framework.response import Response
 
-from todolist.core.models import User
-from todolist.core.serializers import CreateUserSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
+from .models import User
+# from todolist.core.models import User
+from .serializers import CreateUserSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
+# from todolist.core.serializers import CreateUserSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
 
 
 class SignupView(CreateAPIView):
