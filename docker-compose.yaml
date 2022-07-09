@@ -1,9 +1,10 @@
 version: "3.9"
 services:
   front:
-    build:
-      dockerfile: ./docker/Dockerfile
-      context: ./front
+    image: sermalenk/skypro-front:lesson-35
+#    build:
+#      dockerfile: ./docker/Dockerfile
+#      context: ./front
     ports:
       - 80:80
     depends_on:
