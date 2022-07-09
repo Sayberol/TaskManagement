@@ -20,28 +20,31 @@ jobs:
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_NAME: ${{ secrets.DB_NAME }}
     steps:
-      - name: clone code
-        uses: actions/checkout@v2
-      - name: render configs
+      - name: start system
         run: |
-          mkdir deploy
-          cat docker-compose-server.yaml | envsubst > deploy/docker-compose.yaml
-          cat docker_ci_config.py | envsubst > deploy/docker_config.py
-      - name: clone files to server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: "deploy/docker-compose.yaml,deploy/docker_config.py"
-          target: "todolist"
-          strip_components: 1
-      - name: run docker-compose
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            cd todolist
-            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose up -d
+          docker-compose up -d
+#      - name: clone code
+#        uses: actions/checkout@v2
+#      - name: render configs
+#        run: |
+#          mkdir deploy
+#          cat docker-compose-server.yaml | envsubst > deploy/docker-compose.yaml
+#          cat docker_ci_config.py | envsubst > deploy/docker_config.py
+#      - name: clone files to server
+#        uses: appleboy/scp-action@master
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.SSH_USERNAME }}
+#          password: ${{ secrets.SSH_PASSWORD }}
+#          source: "deploy/docker-compose.yaml,deploy/docker_config.py"
+#          target: "todolist"
+#          strip_components: 1
+#      - name: run docker-compose
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.SSH_USERNAME }}
+#          password: ${{ secrets.SSH_PASSWORD }}
+#          script: |
+#            cd todolist
+#            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose up -d
