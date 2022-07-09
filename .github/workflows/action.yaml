@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: start system
         run: |
-          docker-compose up -d
+          docker-compose up -d --build
 #      - name: clone code
 #        uses: actions/checkout@v2
 #      - name: render configs
