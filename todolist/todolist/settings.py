@@ -38,11 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
     'rest_framework',
+    'django_filters',
     'social_django',
-    # 'social_django_mongoengine',
+    'social_django_mongoengine',
     'core',
     'todolist',
+    'goals',
+    'bot',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todolist.wsgi.application'
 
-# SOCIAL_AUTH_STORAGE = "social_django_mongoengine.models.DjangoStorage"
+SOCIAL_AUTH_STORAGE = "social_django_mongoengine.models.DjangoStorage"
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
