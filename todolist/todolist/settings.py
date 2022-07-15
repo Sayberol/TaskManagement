@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'social_django',
-    'social_django_mongoengine',
+    # 'social_django_mongoengine',
     'core',
     'todolist',
     'goals',
