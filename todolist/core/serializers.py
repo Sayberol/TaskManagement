@@ -4,7 +4,6 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
 from .models import User
-# from todolist.core.models import User
 
 
 class CreateUserSerializer(serializers.ModelSerializer):

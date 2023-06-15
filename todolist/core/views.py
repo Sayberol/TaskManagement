@@ -5,9 +5,7 @@ from rest_framework.generics import CreateAPIView, GenericAPIView, RetrieveUpdat
 from rest_framework.response import Response
 
 from .models import User
-# from todolist.core.models import User
 from .serializers import CreateUserSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
-# from todolist.core.serializers import CreateUserSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
 
 
 class SignupView(CreateAPIView):

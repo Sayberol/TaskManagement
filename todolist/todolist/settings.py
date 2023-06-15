@@ -42,11 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'social_django',
-    # 'social_django_mongoengine',
+    'social_django_mongoengine',
     'core',
     'todolist',
-    'goals',
-    'bot',
 ]
 
 MIDDLEWARE = [
@@ -145,8 +143,8 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
 )
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = ""
-SOCIAL_AUTH_VK_OAUTH2_SECRET = ""
+SOCIAL_AUTH_VK_OAUTH2_KEY = "51677332"
+SOCIAL_AUTH_VK_OAUTH2_SECRET = "76d3KDEmMzwyf1d6z9BT"
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ["email", "photos", "notify"]
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/logged-in/"
 SOCIAL_AUTH_LOGIN_ERROR_URL = "/login-error/"
